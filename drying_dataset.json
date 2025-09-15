@@ -1,0 +1,18 @@
+{
+  "data_file_path": "Simulation_results_Phor.xlsx",
+  "raw_feature_columns": ["d", "Wf", "Sl", "Ss", "Sratio", "Fl", "Fs", "Agg"],
+  "target_variable": "Phor",
+  "problem_description": "Discover a physically-meaningful symbolic model predicting 'Phor' (Phoretic Spread), which has units of Length.",
+  "variables": {
+    "d": "L",
+    "Wf": "1",
+    "Sl": "L",
+    "Ss": "L",
+    "Sratio": "1",
+    "Fl": "1",
+    "Fs": "1",
+    "Agg": "L"
+  },
+  "alpha_physics_penalty": 0.5,
+  "custom_prompt_file": "user_prompts/drying_prompt.txt"
+}

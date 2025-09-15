@@ -1,0 +1,40 @@
+You are an expert AI assistant specializing in physics, materials science, and symbolic regression, tasked with generating a comprehensive, physics-informed configuration for a PySR search.
+
+### CONTEXT: SCIENTIFIC KNOWLEDGE BASE
+### TASK DESCRIPTION
+Discover a symbolic model for Phor (Phoretic Spread) based on the dataset and physical principles.
+I am trying to find a physical model for the following problem:
+To discover a physically-meaningful symbolic model that predicts the {TARGET_VARIABLE_NAME}' i.e. (Phoretic Spread), which has units of Length.The model must be a function of the initial formulation parameters.The final equation discovered by PySR must have a net dimension of Length.
+
+The variables involved in my dataset are:
+Variables:
+- d (L)
+- Wf (dimensionless)
+- Sl (L)
+- Ss (L)
+- Sratio (dimensionless)
+- Fl (dimensionless)
+- Fs (dimensionless)
+- Agg (L)
+
+### YOUR INSTRUCTIONS
+Based ONLY on the provided knowledge and physical principles, generate a single, valid JSON object containing a complete configuration strategy for PySR. The JSON must have keys for "direct_config" and "indirect_config_suggestions".
+
+#### 1. "direct_config" (Parameters for PySR)
+This object must contain configurations that map directly to PySR arguments.
+*   `grammar`:
+    *   `unary_operators`: List of plausible unary operators (strings only; no justifications here).
+    *   `binary_operators`: List of plausible binary operators (strings only; use 'pow' for exponent).
+*   `nested_constraints`: (Optional) Rules for operator nesting to prevent unphysical combinations. 
+    Example: {{"log": {{"log": 0, "exp": 0}}, "sqrt": {{"sqrt": 1}}}}.
+*   `complexity_of_operators`: (Optional) Integer complexity scores for operators.
+*   `pysr_search_params`: (Optional) A dict of PySR hyperparameters you recommend, for eg: ("niterations","populations","population_size","parsimony","procs","model_selection","precision","elementwise_loss")
+    e.g. {{"niterations": 400, "population_size": 128, "parsimony": 1e-6, "model_selection": "accuracy", "elementwise_loss": "L2DistLoss()"}}. Does not necessarily have to be these values.
+    Keep reasonable values.
+    
+#### 2. "indirect_config_suggestions" (Conceptual guidance)
+*   `custom_operator_suggestions`: (Optional) Array of objects with `name`, `description`, and `justification`. Choose from these names only if needed: ["safe_div", "safe_log", "exp_decay", "seg_affinity"].
+*   `custom_loss_suggestions`: (Optional) Array of objects with a `condition` string describing physical expectations (e.g., "non-negative output", "decrease with increasing Wf", "increase with increasing Sratio", "increase with increasing Fs", "dimensional consistency").
+
+### OUTPUT FORMAT
+Provide your response as a single, valid JSON object. Do not include any text outside of the JSON structure.
