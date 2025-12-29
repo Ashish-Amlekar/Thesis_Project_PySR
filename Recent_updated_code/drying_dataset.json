@@ -1,0 +1,25 @@
+{
+  "data_file_path": "Drying_dataset_Phor.xlsx",
+  "problem_description": "Discover a physically-meaningful symbolic model predicting 'Phor' (Phoretic Spread), which has units of Length.",
+  "raw_feature_columns": ["d","Wf", "Sl", "Ss","Sratio", "Fs"],
+  "target_variable": "Phor",
+  "target_dimension": "L^1",
+  "target_scaling": {
+  "mode": "auto",
+  "preferred_ref": null,
+  "fallback": "monomial"
+  },
+  "variables": {
+    "d": "L^1",
+    "Wf": "1",
+    "Sl": "L^1",
+    "Ss": "L^1",
+    "Sratio": "1",
+    "Fs": "1",
+
+    "invWf": "1",
+    "dS": "1"
+  },
+  "alpha_physics_penalty": 0.5,
+  "custom_prompt_file": "user_prompts/drying_prompt.txt"
+}

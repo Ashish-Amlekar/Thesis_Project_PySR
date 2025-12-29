@@ -1,0 +1,47 @@
+{
+  "monotonicity": {
+    "Wf": "decreasing",
+    "Sratio": "increasing",
+    "Fs": "increasing"
+  },
+  "dominant_variables": [
+    "Sratio",
+    "Wf",
+    "Fs"
+  ],
+  "preferred_forms": [
+    "multiplicative",
+    "power",
+    "inverse"
+  ],
+  "candidate_templates": [
+    {
+      "expr": "C * (1 - Sratio^A) * (1/Wf) * Fs",
+      "confidence": "very_high",
+      "source": "knowledge-base\\Presentations\\Explanation_updated.md",
+      "justification": "This form is explicitly presented as the 'mechanistic, physically meaningful equation for phoretic_spread' in the `Explanation_updated.md` document. It is a multiplicative combination of terms reflecting identified proportionalities:\n- **(1 - Sratio^A)**: Supported by `Fortini_2017.md` (Equation 11: `\u03b4d = \u0394[1 \u2212 (d/dav)^(2\u2212\u03b1)]`, where `(d/dav)` is `Sratio` and `(2-\u03b1)` is `A`, empirically found to be ~1.87) and `Wolf_2025.md` which states particle velocity is proportional to `d^2` leading to velocity differences dependent on `(Sratio)^2`.\n- **(1/Wf)**: Directly stated as `Phor\u221dWf**\u22121` in `Explanation_updated.md` and consistent with `Wolf_2025.md` observing that higher particle concentrations reduce segregation.\n- **Fs**: Directly stated as `Phor\u221dFs` in `Explanation_updated.md` and supported by `Fortini_2017.md` indicating strong segregation with high small particle concentration. `C` and `A` are constants to be determined."
+    }
+  ],
+  "recommended_operators": {
+    "unary": [
+      "inv"
+    ],
+    "binary": [
+      "+",
+      "-",
+      "*",
+      "/",
+      "^"
+    ]
+  },
+  "engineered_features": [
+    {
+      "name": "invWf",
+      "expr": "1/Wf"
+    },
+    {
+      "name": "Sratio_minus_1",
+      "expr": "Sratio - 1"
+    }
+  ]
+}

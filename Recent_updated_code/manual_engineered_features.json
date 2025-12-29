@@ -1,0 +1,6 @@
+{
+  "engineered_features": [
+    {"name": "invWf", "expr":  "1/Wf"},
+    {"name": "dS","expr": "Sratio - 1"}
+]
+}
