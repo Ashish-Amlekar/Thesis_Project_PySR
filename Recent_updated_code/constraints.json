@@ -1,0 +1,6 @@
+{
+  "custom_loss_suggestions": [
+      {"condition": "Phor should increase with Sratio"},
+      {"condition": "Phor must always be greater than 0"}
+  ]
+}
