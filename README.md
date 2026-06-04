@@ -3,7 +3,7 @@
 ## Overview
 An autonomous LLM agent built using the Model Context 
 Protocol (MCP) that optimizes symbolic regression on 
-real industrial datasets from particle technology research.
+real industrial datasets from particle technology research. This project was done as Master's Thesis in Institute of Particle Technology within TU Braunschweig
 
 ## The Problem
 Traditional symbolic regression requires manual 
